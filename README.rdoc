@@ -1,0 +1,39 @@
+== Vtiger tax receipt:
+A vtiger module for creating tax receipt.  tax receipt or delivery orders are documents which the customer signs to acknowledge delivery of the product.
+The delivery order is driven from the linked invoice.  A comma separated list of products can be chosen. This allows you to add have a delivery order for just some of the products or all of the products.
+
+It links to a sales order and pulls the address details from the sales order and a contact name and phone number if it is set
+
+scott sproule
+www.estormtech.com
+
+== Customer Demand
+The customer has demanded that it be linked to the sales order so that after delivery the invoice can be prepared. 
+
+== Variables
+product list - a list of commma separated values starting from 1 which selects the products on the sales order - so that you can have separate tax receipt for a sales order.  Now updated so that if product list is blank you get all the products in the delivery note.
+customer reference - a reference value that customers can use ( for example their PO (purchase order) number)
+remarks - the remarks portion comes from the description field on the sales order
+contact - from the linked contact on the sales order
+
+
+
+== Installation:
+unzip the entire directory in your vtiger site.  (Your vtiger site is located at http://vtigerurl)
+Then click the link  http://vtigerurl/vtlib.Test.html
+Click on the install link to install the module
+
+If you want the count to have a heading.  You need to change the language file.  Add a field called 'Count'=> 'SN' after the 'Qty' => Qty
+
+
+== Removal:
+Your vtiger site is located at vtigerurl.
+Then click the link  http://vtigerurl/vtlib.Test.html
+Click on the delete link to delete the module
+
+== Compilation//Installation shortcuts
+tar cfz ../taxreceipt.tar.gz .; scp -i ../../aws/xxx ../taxreceipt.tar.gz ubuntu@xxxx.com:/mnt/tmp
+sudo tar xfz /mnt/tmp/taxreceipt.tar.gz ; sudo chown -R www-data:www-data .
+
+=== Strange Notes
+The vertical lines in the table are set up in addCols in include/tcpdf/pdf.php

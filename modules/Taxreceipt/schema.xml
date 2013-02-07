@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_taxreceipt</name>
+			<sql><![CDATA[CREATE TABLE vtiger_taxreceipt(taxreceiptid INT)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_taxreceiptcf</name>
+			<sql><![CDATA[CREATE TABLE vtiger_taxreceiptcf(taxreceiptid INT NOT NULL PRIMARY KEY)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_taxreceiptgrouprel</name>
+			<sql><![CDATA[CREATE TABLE vtiger_taxreceiptgrouprel(taxreceiptid INT NOT NULL PRIMARY KEY, groupname VARCHAR(100))]]></sql>
+		</table>
+	</tables>
+</schema>
