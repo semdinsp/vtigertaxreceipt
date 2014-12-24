@@ -171,8 +171,10 @@ $module->setDefaultSharing('Public_ReadWriteDelete');
 $module->enableTools(Array('Import', 'Export'));
 $module->disableTools('Merge');
 $moduleInstance=Vtiger_module::getInstance('Taxreceipt');
-$moduleInstance->addLink('DETAILVIEW','Create PDF',
+$moduleInstance->addLink('DETAILVIEW','Create Single PDF',
 'index.php?module=Taxreceipt&action=CreatePDF&src_module=$MODULE$&src_record=$RECORD$');
+$moduleInstance->addLink('DETAILVIEW','Create MultiCurr PDF',
+'index.php?module=Taxreceipt&action=CreateMultiPDF&src_module=$MODULE$&src_record=$RECORD$');
 $moduleInstance->initWebService();
 
 echo '</body></html>';

@@ -74,6 +74,9 @@ function get_do_pdf() {
    
 	$productlist = $focus->column_fields["ProductList"];
 	$customerpo = $focus->column_fields["CustomerPO"];
+ // print_r($focus->column_fields);
+  $customernwp = $focus->column_fields["cf_679"];   // customer nwp field
+  $f_code_serial = $focus->column_fields["cf_680"];   // customer nwp field
 	$tr_number = $focus->column_fields["dn_sequence"];
 
 	$inv_no = $focus->column_fields['LinkTo'];

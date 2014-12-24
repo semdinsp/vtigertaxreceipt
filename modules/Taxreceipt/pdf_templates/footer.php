@@ -31,8 +31,13 @@ $pdf->addDescBlock($desc2, $mod_strings["TotalTax"], $descBlock);
 /* **************** Begin Terms ****************** */
  $stampBlock=array("107",$top,"53", $num);
 // $pdf->addDescBlock($conditions, $app_strings["DOTerms"], $termBlock);
- $pdf->addDescBlock("\n\n\n\n\n\n\n".$mod_strings["AuthIndividual"].":\n ", $mod_strings["AuthStamp"], $stampBlock);
-$imageBlock2=array("107",$top+15,"20","20");
+$iss_date=getValidDisplayDate(date("Y-m-d"));
+$newtitle="Jakarta, ".$iss_date;
+//$pdf->addDescBlock("\n\n\n\n\n\n\n".$mod_strings["AuthIndividual"].":\n "."Jakarta, ".$iss_date."\n", $mod_strings["AuthStamp"], $stampBlock);
+$pdf->addDescBlock(" ", $newtitle, $stampBlock);
+$imageBlock3=array("17",$top+25,"60","20");
+$pdf->addImage("tax.jpg", $imageBlock3);
+$imageBlock2=array("109",$top+15,"20","20");
 $pdf->addImage("stamp.jpg", $imageBlock2);
 /* ************** End Terms *********************** */
 
